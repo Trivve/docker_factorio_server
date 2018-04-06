@@ -4,8 +4,6 @@ MAINTAINER https://github.com/dtandersen/docker_factorio_server
 
 ARG USER=factorio
 ARG GROUP=factorio
-ARG PUID=845
-ARG PGID=845
 
 ENV PORT=34197 \
     RCON_PORT=27015 \
@@ -14,7 +12,9 @@ ENV PORT=34197 \
     SAVES=/factorio/saves \
     CONFIG=/factorio/config \
     MODS=/factorio/mods \
-    SCENARIOS=/factorio/scenarios
+    SCENARIOS=/factorio/scenarios \
+    PUID=845 \
+    PGID=845
 
 RUN mkdir -p /opt /factorio && \
     apk add --update --no-cache pwgen && \
